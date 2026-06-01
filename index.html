@@ -707,7 +707,7 @@ function openContract(id) {
   // Podpisujący widzi tylko umowy przypisane do nich
   if(currentUser?.role==='podpisujacy' && c.signerEmail !== currentUser.email) return;
   prevPage = document.querySelector('.page.active')?.id?.replace('page-','')||'dashboard';
-  const c = contracts.find(x=>x.id===id);
+  // const c = contracts.find(x=>x.id===id);
   document.querySelectorAll('.page').forEach(x=>x.classList.remove('active'));
   document.getElementById('page-detail').classList.add('active');
   document.getElementById('dsp').textContent = sLabels[c.status]||c.status;
